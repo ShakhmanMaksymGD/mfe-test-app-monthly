@@ -10,7 +10,7 @@
     "prebuild": "vite build",
     "build:watch": "vite build --watch",
     "preview": "vite preview",
-    "lint": "npx eslint . --fix",
+    "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
