@@ -19,8 +19,8 @@ jobs:
       - name: Install npm@latest
         run: npm install -g npm@latest
 
-      - name: Remove node_modules and package-lock.json
-        run: rm -rf node_modules package-lock.json
+      - name: Remove node_modules
+        run: rm -rf node_modules
 
       - name: Clean npm cache
         run: npm cache clean --force
@@ -43,8 +43,8 @@ jobs:
       - name: Install npm@latest
         run: npm install -g npm@latest
 
-      - name: Remove node_modules and package-lock.json
-        run: rm -rf node_modules package-lock.json
+      - name: Remove node_modules
+        run: rm -rf node_modules
 
       - name: Clean npm cache
         run: npm cache clean --force
