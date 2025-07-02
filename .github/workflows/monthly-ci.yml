@@ -3,7 +3,7 @@ name: Monthly CI
 on:
   pull_request:
     paths:
-      - 'src/**'
+      - '**'
   
 jobs:
   lint:
