@@ -9,18 +9,19 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Use Node.js 20
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
+      - name: Use Node.js
+        uses: actions/setup-node@v4
 
-      - name: Install Yarn
-        run: npm install -g yarn
+      - name: Install npm@latest
+        run: npm install -g npm@latest
+
+      - name: Clean npm cache
+        run: npm cache clean --force
 
       - name: Install Deps
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       - name: Lint
         run: npm run lint
@@ -36,9 +37,6 @@ jobs:
       
       - name: Install npm@latest
         run: npm install -g npm@latest
-
-      - name: Remove node_modules
-        run: rm -rf node_modules
 
       - name: Clean npm cache
         run: npm cache clean --force
