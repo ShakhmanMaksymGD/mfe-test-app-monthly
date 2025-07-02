@@ -11,10 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 22.3.x
+      - name: Use Node.js 22.5.x
         uses: actions/setup-node@v4
         with:
-          node-version: '22.3.x'
+          node-version: '22.5.x'
 
       - name: Clean npm cache
         run: npm cache clean --force
