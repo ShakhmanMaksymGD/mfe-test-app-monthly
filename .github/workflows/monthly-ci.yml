@@ -16,6 +16,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Set registry
+        run: npm install --registry=https://registry.npmjs.org/
+
       - name: Clean npm cache
         run: npm cache clean --force
 
