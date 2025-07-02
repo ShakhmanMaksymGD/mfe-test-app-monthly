@@ -11,10 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Use Node.js 22.5.x
-        uses: actions/setup-node@v4
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
         with:
-          node-version: '22.5.x'
+          node-version: 20
+
+      - name: Install npm@latest
+        run: npm install -g npm@latest
+
+      - name: Remove node_modules and package-lock.json
+        run: rm -rf node_modules package-lock.json
 
       - name: Clean npm cache
         run: npm cache clean --force
@@ -33,6 +39,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+      
+      - name: Install npm@latest
+        run: npm install -g npm@latest
+
+      - name: Remove node_modules and package-lock.json
+        run: rm -rf node_modules package-lock.json
 
       - name: Clean npm cache
         run: npm cache clean --force
