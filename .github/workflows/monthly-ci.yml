@@ -3,14 +3,11 @@ name: Monthly CI
 on:
   pull_request:
     paths:
-      - 'src/**'
+      - '**'
   
 jobs:
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
     steps:
       - uses: actions/checkout@v3
 
@@ -29,9 +26,6 @@ jobs:
         run: npm run lint
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
     steps:
       - uses: actions/checkout@v3
 
