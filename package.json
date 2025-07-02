@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --mode development",
     "dev:sspa": "vite --mode staging",
-    "build": "vite build && node ../mfe-test-scripts/update-env-remote-versions.js",
+    "build": "vite build && node ./node_modules/test-scripts/update-env-remote-versions.js",
     "prebuild": "vite build",
     "build:watch": "vite build --watch",
     "preview": "vite preview",
@@ -17,6 +17,7 @@
     "@mdi/font": "^7.4.47",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "mfe-test-scripts": "^1.0.0",
     "pinia": "^3.0.1",
     "single-spa-css": "^4.0.1",
     "single-spa-vue": "^3.0.1",
