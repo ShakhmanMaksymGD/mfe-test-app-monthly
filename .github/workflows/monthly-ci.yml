@@ -16,8 +16,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install npm@latest
-        run: npm install -g npm@latest
+      - name: Install npm@10
+        run: npm install -g npm@10
+
+      - name: Set node memory limit
+        run: export NODE_OPTIONS=--max_old_space_size=4096
 
       - name: Remove node_modules
         run: rm -rf node_modules
