@@ -12,9 +12,6 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
     steps:
       - uses: actions/checkout@v3
 
@@ -34,9 +31,6 @@ jobs:
   build:
     needs: lint
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
     steps:
       - uses: actions/checkout@v3
 
@@ -57,9 +51,6 @@ jobs:
     needs: build
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: src
     steps:
       - uses: actions/checkout@v3
         with:
