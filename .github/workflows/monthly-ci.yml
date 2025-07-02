@@ -18,7 +18,7 @@ jobs:
         run: npm cache clean --force
 
       - name: Install Deps
-        run: npm install
+        run: npm --loglevel verbose ci
 
       - name: Lint
         run: npm run lint
