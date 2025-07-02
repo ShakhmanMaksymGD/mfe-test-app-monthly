@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "@shared/utility": "http://localhost:5174/utility.js"
+  }
+}

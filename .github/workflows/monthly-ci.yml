@@ -1,0 +1,50 @@
+name: Monthly CI
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+  
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Install Deps
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Clean npm cache
+        run: npm cache clean --force
+
+      - name: Install Deps
+        run: npm ci
+
+      - name: Pre-build
+        run: npm run prebuild
