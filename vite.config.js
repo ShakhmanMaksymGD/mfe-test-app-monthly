@@ -7,8 +7,8 @@ import vuetify from 'vite-plugin-vuetify'
 import externalize from "vite-plugin-externalize-dependencies"
 import fs from 'fs'
 import path from 'path'
-import versionCleanup from '../scripts/plugins/version-cleanup'
-import renameMainFile from '../scripts/plugins/rename-main-file'
+import versionCleanup from '../mfe-test-scripts/plugins/version-cleanup'
+import renameMainFile from '../mfe-test-scripts/plugins/rename-main-file'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const packageJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'package.json'), 'utf8'))
@@ -16,8 +16,6 @@ const version = packageJson.version
 
 export default defineConfig(({ mode }) => {
   const isDev = mode === 'staging' || mode === 'development';
-
-  console.log("isDev", mode);
   
   return {
     plugins: [
