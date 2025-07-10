@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --mode development",
     "dev:sspa": "vite --mode staging",
-    "build": "vite build && node ./node_modules/mfe-test-scripts/update-env-remote-versions.js",
+    "build": "vite build",
     "prebuild": "vite build",
     "build:watch": "vite build --watch",
     "preview": "vite preview",
